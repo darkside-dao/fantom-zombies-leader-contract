@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabrielkinash1/fantom-zombies-leader-contract.git"
+    "url": "git+https://github.com/darkside-dao/fantom-zombies-leader-contract.git"
   },
   "author": "Gabriel \"Kinash\"",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gabrielkinash1/fantom-zombies-leader-contract/issues"
+    "url": "https://github.com/darkside-dao/fantom-zombies-leader-contract/issues"
   },
-  "homepage": "https://github.com/gabrielkinash1/fantom-zombies-leader-contract#readme",
+  "homepage": "https://github.com/darkside-dao/fantom-zombies-leader-contract#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-etherscan": "^3.0.3",
