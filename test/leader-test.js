@@ -5,7 +5,7 @@ describe("Greeter", function () {
   let leaderZombies, accounts;
   beforeEach(async function () {
     const LeaderZombies = await ethers.getContractFactory("LeaderZombies");
-    leaderZombies = await LeaderZombies.deploy(50);
+    leaderZombies = await LeaderZombies.deploy();
     await leaderZombies.deployed();
     accounts = await ethers.getSigners();
   });

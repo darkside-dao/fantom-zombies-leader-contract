@@ -12,22 +12,26 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract LeaderZombies is ERC721URIStorage, ERC721Enumerable, ERC721Burnable, ERC721Pausable, Ownable {
     using Counters for Counters.Counter;
 
-    uint256 immutable public collectionSize;
-
     Counters.Counter private _tokenIds;
 
     mapping(uint256 => string) private _tokenURIs;
 
-    constructor(uint256 _collectionSize) ERC721("Fantom Zombies: Leaders", "LEADERZ") {
-        collectionSize = _collectionSize;
+    constructor() ERC721("Fantom Zombies: Leaders", "LEADERZ") {
         _tokenIds.increment();
     }
 
     function give(address to, uint256 quantity) external onlyOwner {
         uint256 tokenId = _tokenIds.current();
-        require((tokenId - 1) + quantity < collectionSize, "Collection size reached");
         for (uint256 i; i < quantity; i++) {
             _safeMint(to, tokenId + i);
+        }
+    }
+
+    function togglePause() external onlyOwner {
+        if (paused()) {
+            _pause();
+        } else {
+            _unpause();
         }
     }
 
