@@ -24,6 +24,7 @@ contract LeaderZombies is ERC721URIStorage, ERC721Enumerable, ERC721Burnable, ER
         uint256 tokenId = _tokenIds.current();
         for (uint256 i; i < quantity; i++) {
             _safeMint(to, tokenId + i);
+            _tokenIds.increment();
         }
     }
 

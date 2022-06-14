@@ -1578,7 +1578,7 @@ abstract contract ERC721URIStorage is ERC721 {
     }
 }
 
-// File: contracts/LeaderZombies.sol
+// File: contracts/FantomZombiesLeader.sol
 
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
@@ -1605,6 +1605,7 @@ contract LeaderZombies is ERC721URIStorage, ERC721Enumerable, ERC721Burnable, ER
         uint256 tokenId = _tokenIds.current();
         for (uint256 i; i < quantity; i++) {
             _safeMint(to, tokenId + i);
+            _tokenIds.increment();
         }
     }
 
